@@ -212,6 +212,8 @@ export function initWorld(canvas) {
         if (callbacks.onStationLeave) callbacks.onStationLeave();
       }
       state.activeStation = active;
+      // Highlight touch interact button when near a station
+      touch.setInteractActive(!!active);
     }
 
     // --- Animate content boards (descent/ascent) ---

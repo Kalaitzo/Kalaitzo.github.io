@@ -8,7 +8,7 @@ export function createTouchControls() {
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
     (navigator.maxTouchPoints > 0 && window.innerWidth < 1024);
   if (!isMobile) {
-    return { getDirection: () => 0, onInteract: () => {}, dispose: () => {} };
+    return { getDirection: () => 0, onInteract: () => {}, setInteractActive: () => {}, dispose: () => {} };
   }
 
   let direction = 0;
@@ -62,6 +62,11 @@ export function createTouchControls() {
 
     onInteract(fn) {
       enterCallback = fn;
+    },
+
+    /** Highlight the interact button when near a station */
+    setInteractActive(active) {
+      interactBtn.classList.toggle('active', active);
     },
 
     dispose() {
