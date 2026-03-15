@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' ws://localhost:* http://localhost:*;" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Vasileios Kalaitzopoulos — Portfolio</title>
+    <meta name="description" content="Interactive side-scroller portfolio with a 3D bipedal robot — Robotics, Computer Vision & Software Engineering." />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a class="nav-logo" data-station="Home">VK</a>
+        <div class="nav-links">
+          <a data-station="Education">Education</a>
+          <a data-station="Projects">Projects</a>
+          <a data-station="Experience">Experience</a>
+          <a data-station="Skills">Skills</a>
+        </div>
+        <button id="menu-btn" class="menu-btn" aria-label="Open info panel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Full-viewport 3D canvas -->
+    <canvas id="robot-canvas"></canvas>
+
+    <!-- HUD and panels are created by JS -->
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
